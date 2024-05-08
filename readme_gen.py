@@ -26,8 +26,8 @@ Please format the README.md using Markdown syntax and make it easy to read and u
 
 def generate_ai_message(file: str) -> str:
     """
-    Generate a commit message using the AI
-    model based on the provided git diff.
+    Generate a README file using the AI
+    model based on the provided project code.
 
     Args:
         file (str): file content.
@@ -61,10 +61,10 @@ def generate_ai_message(file: str) -> str:
 
 def main(source_file: str) -> str:
     """
-    Main function to generate and apply the commit message.
+    Main function to generate readme file.
     """
     script_dir = Path(__file__).resolve().parent
-    readme = script_dir / "readme.md"
+    readme = script_dir / "README.md"
     with open(script_dir / source_file, 'r') as file:
         with open(readme, 'w') as doc:
             doc.write(generate_ai_message(str(file.read())))
